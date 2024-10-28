@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Tradutor de Línguas Nacionais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .btn-translate {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-translate:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e9ecef;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #333;
+    }
+    .no-result {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="projecto-tradutor-recolha-dados.html">Recolha de Dados</a>
+
+  <div class="container">
+    <h2>Tradutor de Línguas Nacionais</h2>
+    
+    <div class="form-group">
+      <label for="language">Escolha o Idioma:</label>
+      <select id="language">
+        <option value="umbundu">Umbundu</option>
+        <option value="nganguela">Nganguela</option>
+        <option value="nhanheka">Nhanheka</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="searchTerm">Digite a palavra/frase em Português:</label>
+      <input type="text" id="searchTerm" placeholder="Ex.: Obrigado">
+    </div>
+    
+    <button class="btn-translate" onclick="translateWord()">Traduzir</button>
+    
+    <div id="result" class="result no-result">
+      A tradução aparecerá aqui.
+    </div>
+  </div>
+  
+  <script>
+    function translateWord() {
+      const language = document.getElementById('language').value;
+      const searchTerm = document.getElementById('searchTerm').value.trim();
+      
+      if (searchTerm === "") {
+        document.getElementById('result').textContent = "Por favor, digite uma palavra ou frase para traduzir.";
+        document.getElementById('result').classList.add("no-result");
+        return;
+      }
+
+      // Aqui você conectará ao sistema de tradução ou API
+      // Exemplo simulado de resposta:
+      const translations = {
+        umbundu: { "Obrigado": "Kandimba" },
+        nganguela: { "Obrigado": "Imbuan" },
+        nhanheka: { "Obrigado": "Wetupe" }
+      };
+
+      const translation = translations[language][searchTerm] || "Tradução não encontrada.";
+
+      document.getElementById('result').textContent = `Tradução para ${language.charAt(0).toUpperCase() + language.slice(1)}: ${translation}`;
+      document.getElementById('result').classList.remove("no-result");
+    }
+  </script>
+</body>
+</html>

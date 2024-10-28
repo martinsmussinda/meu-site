@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coleta de Dados</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            input[type="text"], select, textarea {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .message {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <a href="projecto-tradutor-prototipo.html">Protótipo</a>
+
+        <p>Queremos preservar e fortalecer as línguas nacionais de Angola, aproximando falantes de várias comunidades e promovendo o uso das línguas Umbundu, Nganguela e Nhanheka no mundo digital. Estamos criando um tradutor para tornar essas línguas acessíveis a mais pessoas e ajudar quem deseja aprender e usar essas línguas no dia a dia. Sua contribuição é essencial!</p>
+        
+        <p>Ao participar, você estará ajudando a criar uma ferramenta que possibilita conexões culturais e facilita a aprendizagem de novas línguas para diversas pessoas. Venha fazer parte deste projeto, compartilhe seu conhecimento e ajude-nos a construir um legado que valoriza as línguas nacionais de Angola.</p>
+
+        <h2>Formulário de Coleta de Dados</h2>
+
+        <form id="dataForm" method="POST" action="https://script.google.com/macros/s/AKfycbwr-YNiql0iZAZH2M1n65wxO97xXRvKpwbdJ83-y25G/dev">
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="Nome" placeholder="Escreva seu nome..." required>
+
+            <label for="contacto">Contacto/WhatsApp</label>
+            <input type="text" id="contacto" name="Contacto" placeholder="Ex: 932 964 743" required>
+
+            <label for="lingua">Qual dialeto você domina ? (Umbundu, Nganguela, etc.)</label>
+            <input type="text" id="lingua" name="Língua" required>
+
+            <label for="palavra">Escreva uma palavra/frase no seu dialeto.</label>
+            <input type="text" id="palavra" name="Palavra/Frase" required>
+
+            <label for="traducao">Escreva a tradução em português.</label>
+            <input type="text" id="traducao" name="Tradução" required>
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="Categoria" required>
+               <option value="">Selecione uma categoria</option> <!-- Opção para selecionar -->
+               <option value="Saudações e Cumprimentos">Saudações e Cumprimentos</option>
+    	       <option value="Família e Relações">Família e Relações</option>
+               <option value="Números e Contagem">Números e Contagem</option>
+               <option value="Cores e Formas">Cores e Formas</option>
+               <option value="Saúde e Bem-estar">Saúde e Bem-estar</option>
+               <option value="Natureza e Clima">Natureza e Clima</option>
+               <option value="Animais">Animais</option>
+               <option value="Objetos e Utilidades do Dia a Dia">Objetos e Utilidades do Dia a Dia</option>
+               <option value="Cultura e Tradições">Cultura e Tradições</option>
+               <option value="Frases Comuns">Frases Comuns</option>
+               <option value="Alimentos e Bebidas">Alimentos e Bebidas</option>
+               <option value="Tempo e Datas">Tempo e Datas</option>
+               <option value="Locais e Direções">Locais e Direções</option>
+               <option value="Ações e Verbos">Ações e Verbos</option>
+            </select>
+
+            <label for="observacoes">OBSERVAÇÕES</label>
+            <textarea id="observacoes" name="Observações" rows="4" placeholder="Escreva as pronúncias aqui..."></textarea>
+
+            <button type="submit">Enviar</button>
+        	<button type="reset">Limpar Dados</button>
+        </form>
+    </body>
+</html>
